@@ -1,0 +1,12 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="center center" color="primary">
+  <div class="site-wrapper" fxFlex>
+    <div fxFlex class="logo">
+      <a href="{{ site.baseUrl }}">{{ site.title }}</a>
+    </div>
+    <button mat-icon-button *ngFor="let account of socialMedia">
+      <a [href]="account.url">
+        <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
+      </a>
+    </button>
+  </div>
+</mat-toolbar>

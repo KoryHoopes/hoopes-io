@@ -1,6 +1,8 @@
-<mat-toolbar fxLayout="row" color="primary">
-  <div fxFlex class="logo">{{  title }}</div>
-  <button mat-icon-button>
-    <fa-icon class="fa-2x" [icon]="iconGithub"></fa-icon>
-  </button>
-</mat-toolbar>
+<div fxLayout="column">
+  <div fxLayout="row">
+    <app-navigation fxFlex></app-navigation>
+  </div>
+  <div fxLayout="row">
+    <div class="site-wrapper" fxFlex></div>
+  </div>
+</div>
