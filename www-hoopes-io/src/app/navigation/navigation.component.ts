@@ -1,9 +1,8 @@
-import { Component, Inject } from '@angular/core'
-
+import { Component } from '@angular/core';
 // Font Awesome
-import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 
 @Component({
   selector: 'app-navigation',
@@ -16,7 +15,7 @@ export class NavigationComponent {
   site = {
     title: 'hoopes.io',
     baseUrl: '/'
-  }
+  };
   socialMedia = [
     {
       name: 'Github',
@@ -33,5 +32,5 @@ export class NavigationComponent {
       icon: faTwitter,
       url: 'https://www.twitter.com/koryhoopes'
     }
-  ]
+  ];
 }
