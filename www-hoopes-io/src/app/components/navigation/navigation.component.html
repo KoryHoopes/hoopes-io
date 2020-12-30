@@ -1,4 +1,4 @@
-<mat-toolbar fxLayout="row" fxLayoutAlign="center center" color="primary">
+<mat-toolbar class="masthead" fxLayout="row" fxLayoutAlign="center center" color="primary">
   <div class="site-wrapper" fxFlex>
     <div fxFlex class="logo">
       <a href="{{ site.baseUrl }}">{{ site.title }}</a>
@@ -10,3 +10,12 @@
     </button>
   </div>
 </mat-toolbar>
+<nav>
+  <mat-toolbar fxLayout="row" fxLayoutAlign="center center" color="secondary">
+    <div class="site-wrapper" fxLayoutAlign="center center" fxFlex>
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a routerLink="/resume" routerLinkActive="active">Resume</a>
+    </div>
+  </mat-toolbar>
+</nav>

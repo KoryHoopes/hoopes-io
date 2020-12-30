@@ -1,38 +1,46 @@
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-// Flex-Layout
-import { FlexLayoutModule } from '@angular/flex-layout';
-// Material
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+
+// Components
+import { AppComponent } from './app.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+
+// Flex Layout
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // Font Awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// App Components
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomeComponent } from './components/home/home.component';
+
+// Material
+import { MaterialModule } from './modules/material.module';
+
+// Routing
+import { RoutingModule } from './modules/routing.module';
 
 @NgModule({
   declarations: [
+    // Components
     AppComponent,
-    NavigationComponent,
-    HomeComponent
+    NavigationComponent
   ],
   imports: [
+    // Angular
     BrowserModule,
     BrowserAnimationsModule,
-    // Flex-Layout
+
+    // Flex Layout
     FlexLayoutModule,
-    // Material
-    MatButtonModule,
-    MatDialogModule,
-    MatIconModule,
-    MatToolbarModule,
+
     // Font Awesome
-    FontAwesomeModule
+    FontAwesomeModule,
+
+    // Material
+    MaterialModule,
+
+    // Routing
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
