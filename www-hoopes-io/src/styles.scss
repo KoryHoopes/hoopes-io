@@ -11,9 +11,9 @@ body {
 
 .content {
   padding: 16px;
+  position: relative;
+  z-index: 0;
 }
 .site-wrapper {
   max-width: 1200px;
-
-
 }

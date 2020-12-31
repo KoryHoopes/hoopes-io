@@ -22,7 +22,7 @@
     </div>
   </div>
 </mat-toolbar>
-<div class="mobile-menu" *ngIf="site.mobileMenu.show" fxHide fxShow.xs="true">
+<div class="mobile-menu" *ngIf="site.mobileMenu.show" [@toggleMobileMenu] fxHide fxShow.xs="true">
   <div dfxLayout="row" fxLayoutAlign="center center">
     <button mat-icon-button *ngFor="let account of socialMedia">
       <a [href]="account.url">

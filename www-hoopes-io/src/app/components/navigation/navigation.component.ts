@@ -1,4 +1,6 @@
+// Angular
 import { Component } from '@angular/core';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 // Font Awesome
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
@@ -38,7 +40,40 @@ socialMedia: SocialMedia[] = [
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  animations: [
+    trigger(
+      'toggleMobileMenu',
+      [
+        transition(
+          ':enter',
+          [
+            style({
+              opacity: 0
+            }),
+            animate(
+              '.25s ease-out',
+              style({
+                opacity: 1
+            }))
+          ]
+        ),
+        transition(
+          ':leave',
+          [
+            style({
+              opacity: 1
+            }),
+            animate(
+              '.25s ease-out',
+              style({
+                opacity: 0
+            }))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class NavigationComponent {
   constructor() {}
