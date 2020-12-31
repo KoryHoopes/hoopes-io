@@ -1,13 +1,16 @@
+<!-- Masthead toolbar -->
 <mat-toolbar
   class="masthead"
+  color="primary"
   fxLayout="row"
   fxLayoutAlign="center center"
-  color="primary"
 >
+  <!-- The site wrapper keeps the masthead centered -->
   <div class="site-wrapper" fxFlex>
     <div fxFlex class="logo">
       <a href="{{ site.baseUrl }}">{{ site.title }}</a>
     </div>
+    <!-- Social media links for wide site -->
     <dix fxHide.xs="true">
       <button mat-icon-button *ngFor="let account of socialMedia">
         <a [href]="account.url">
@@ -15,6 +18,7 @@
         </a>
       </button>
     </dix>
+    <!-- Show the mobile menu when the site is narrow -->
     <div fxHide fxShow.xs="true">
       <button mat-icon-button (click)="mobileMenu()">
         <fa-icon class="fa-2x" [icon]="site.mobileMenu.icon"></fa-icon>
@@ -22,7 +26,15 @@
     </div>
   </div>
 </mat-toolbar>
-<div class="mobile-menu" *ngIf="site.mobileMenu.show" [@toggleMobileMenu] fxHide fxShow.xs="true">
+<!-- Mobile menu for narrow site -->
+<div
+  class="mobile-menu"
+  *ngIf="site.mobileMenu.show"
+  [@toggleMobileMenu]
+  fxHide
+  fxShow.xs="true"
+>
+  <!-- The social media links move down here for the mobile menu -->
   <div dfxLayout="row" fxLayoutAlign="center center">
     <button mat-icon-button *ngFor="let account of socialMedia">
       <a [href]="account.url">
@@ -40,6 +52,7 @@
     </a>
   </nav>
 </div>
+<!-- Navigation for the wide site -->
 <nav>
   <mat-toolbar
     fxLayout="row"
