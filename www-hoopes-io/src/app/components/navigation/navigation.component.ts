@@ -8,6 +8,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 // Model
 import { SocialMedia } from '../../models/navigation/navigation.interface';
 
+// Component data
 const site = {
   title: 'hoopes.io',
   baseUrl: '/',
@@ -45,15 +46,18 @@ export class NavigationComponent {
   site = site;
   socialMedia = socialMedia;
 
-  mobileMenu() {
-    site.mobileMenu.show = !site.mobileMenu.show;
+  mobileMenu = mobileMenu;
+}
 
-    if (site.mobileMenu.icon === faBars ) {
-      site.mobileMenu.icon = faTimes;
+// Component functions
+function mobileMenu() {
+  site.mobileMenu.show = !site.mobileMenu.show;
 
-      return;
-    }
+  if (site.mobileMenu.icon === faBars ) {
+    site.mobileMenu.icon = faTimes;
 
-    site.mobileMenu.icon = faBars;
+    return;
   }
+
+  site.mobileMenu.icon = faBars;
 }
