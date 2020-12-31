@@ -1,21 +1,53 @@
-<mat-toolbar class="masthead" fxLayout="row" fxLayoutAlign="center center" color="primary">
+<mat-toolbar
+  class="masthead"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  color="primary"
+>
   <div class="site-wrapper" fxFlex>
     <div fxFlex class="logo">
       <a href="{{ site.baseUrl }}">{{ site.title }}</a>
     </div>
+    <dix fxHide.xs="true">
+      <button mat-icon-button *ngFor="let account of socialMedia">
+        <a [href]="account.url">
+          <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
+        </a>
+      </button>
+    </dix>
+    <div fxHide fxShow.xs="true">
+      <button mat-icon-button (click)="mobileMenu()">
+        <fa-icon class="fa-2x" [icon]="site.mobileMenu.icon"></fa-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="mobile-menu" *ngIf="site.mobileMenu.show" fxHide fxShow.xs="true">
+  <div dfxLayout="row" fxLayoutAlign="center center">
     <button mat-icon-button *ngFor="let account of socialMedia">
       <a [href]="account.url">
         <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
       </a>
     </button>
   </div>
-</mat-toolbar>
+  <mat-divider></mat-divider>
+  <nav fxLayout="column">
+    <a routerLink="home" routerLinkActive="active" (click)="mobileMenu()">Home</a>
+    <a routerLink="resume" routerLinkActive="active" (click)="mobileMenu()">Resume</a>
+  </nav>
+</div>
+
 <nav>
-  <mat-toolbar fxLayout="row" fxLayoutAlign="center center" color="secondary">
+  <mat-toolbar
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxHide.xs="true"
+    color="secondary"
+  >
     <div class="site-wrapper" fxLayoutAlign="center center" fxFlex>
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <mat-divider [vertical]="true"></mat-divider>
-      <a routerLink="/resume" routerLinkActive="active">Resume</a>
+      <a routerLink="home" routerLinkActive="active">Home</a>
+      <a routerLink="resume" routerLinkActive="active">Resume</a>
     </div>
   </mat-toolbar>
 </nav>
