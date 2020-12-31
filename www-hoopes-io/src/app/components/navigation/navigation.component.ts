@@ -1,6 +1,12 @@
 // Angular
 import { Component } from '@angular/core';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  state
+} from '@angular/animations';
 // Font Awesome
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
@@ -12,68 +18,63 @@ import { SocialMedia } from '../../models/navigation/navigation.interface';
 
 // Component data
 const site = {
-  title: 'hoopes.io',
-  baseUrl: '/',
-  mobileMenu: {
-    icon: faBars,
-    show: false
-  }
-},
-socialMedia: SocialMedia[] = [
-  {
-    name: 'Github',
-    icon: faGithub,
-    url: 'https://www.github.com/koryhoopes'
+    title: 'hoopes.io',
+    baseUrl: '/',
+    mobileMenu: {
+      icon: faBars,
+      show: false
+    }
   },
-  {
-    name: 'LinkedIn',
-    icon: faLinkedinIn,
-    url: 'https://www.linkedin.com/in/kory-hoopes'
-  },
-  {
-    name: 'Twitter',
-    icon: faTwitter,
-    url: 'https://www.twitter.com/koryhoopes'
-  }
+  socialMedia: SocialMedia[] = [
+    {
+      name: 'Github',
+      icon: faGithub,
+      url: 'https://www.github.com/koryhoopes'
+    },
+    {
+      name: 'LinkedIn',
+      icon: faLinkedinIn,
+      url: 'https://www.linkedin.com/in/kory-hoopes'
+    },
+    {
+      name: 'Twitter',
+      icon: faTwitter,
+      url: 'https://www.twitter.com/koryhoopes'
+    }
+  ];
+
+const animations = [
+  trigger('toggleMobileMenu', [
+    transition(':enter', [
+      style({
+        opacity: 0
+      }),
+      animate(
+        '.25s ease-in-out',
+        style({
+          opacity: 1
+        })
+      )
+    ]),
+    transition(':leave', [
+      style({
+        opacity: 1
+      }),
+      animate(
+        '.25s ease-in-out',
+        style({
+          opacity: 0
+        })
+      )
+    ])
+  ])
 ];
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
-  animations: [
-    trigger(
-      'toggleMobileMenu',
-      [
-        transition(
-          ':enter',
-          [
-            style({
-              opacity: 0
-            }),
-            animate(
-              '.25s ease-out',
-              style({
-                opacity: 1
-            }))
-          ]
-        ),
-        transition(
-          ':leave',
-          [
-            style({
-              opacity: 1
-            }),
-            animate(
-              '.25s ease-out',
-              style({
-                opacity: 0
-            }))
-          ]
-        )
-      ]
-    )
-  ]
+  animations: [animations]
 })
 export class NavigationComponent {
   constructor() {}
@@ -88,7 +89,7 @@ export class NavigationComponent {
 function mobileMenu() {
   site.mobileMenu.show = !site.mobileMenu.show;
 
-  if (site.mobileMenu.icon === faBars ) {
+  if (site.mobileMenu.icon === faBars) {
     site.mobileMenu.icon = faTimes;
 
     return;

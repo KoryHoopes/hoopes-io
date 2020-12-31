@@ -1,14 +1,14 @@
 @import '~@angular/material/theming';
-
 // Fonts
 @import 'https://fonts.googleapis.com/css?family=Material+Icons';
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500');
 
-$fontConfig: (display-4: mat-typography-level(112px, 112px, 300, 'Raleway', -0.0134em),
+$fontConfig: (
+  display-4: mat-typography-level(112px, 112px, 300, 'Raleway', -0.0134em),
   display-3: mat-typography-level(56px, 56px, 400, 'Raleway', -0.0089em),
-  display-2: mat-typography-level(45px, 48px, 400, 'Raleway', 0.0000em),
+  display-2: mat-typography-level(45px, 48px, 400, 'Raleway', 0em),
   display-1: mat-typography-level(34px, 40px, 400, 'Raleway', 0.0074em),
-  headline: mat-typography-level(24px, 32px, 400, 'Raleway', 0.0000em),
+  headline: mat-typography-level(24px, 32px, 400, 'Raleway', 0em),
   title: mat-typography-level(20px, 32px, 500, 'Raleway', 0.0075em),
   subheading-2: mat-typography-level(16px, 28px, 400, 'Raleway', 0.0094em),
   subheading-1: mat-typography-level(15px, 24px, 500, 'Raleway', 0.0067em),
@@ -16,7 +16,8 @@ $fontConfig: (display-4: mat-typography-level(112px, 112px, 300, 'Raleway', -0.0
   body-1: mat-typography-level(14px, 20px, 400, 'Raleway', 0.0179em),
   button: mat-typography-level(14px, 14px, 500, 'Raleway', 0.0893em),
   caption: mat-typography-level(12px, 20px, 400, 'Raleway', 0.0333em),
-  input: mat-typography-level(inherit, 1.125, 400, 'Raleway', 1.5px));
+  input: mat-typography-level(inherit, 1.125, 400, 'Raleway', 1.5px)
+);
 
 // Foreground Elements
 
@@ -28,7 +29,8 @@ $dark-disabled-text: rgba($dark-primary-text, 0.38);
 $dark-dividers: rgba($dark-primary-text, 0.12);
 $dark-focused: rgba($dark-primary-text, 0.12);
 
-$mat-light-theme-foreground: (base: black,
+$mat-light-theme-foreground: (
+  base: black,
   divider: $dark-dividers,
   dividers: $dark-dividers,
   disabled: $dark-disabled-text,
@@ -43,7 +45,7 @@ $mat-light-theme-foreground: (base: black,
   text: $dark-primary-text,
   slider-min: $dark-primary-text,
   slider-off: rgba($dark-text, 0.26),
-  slider-off-active: $dark-disabled-text,
+  slider-off-active: $dark-disabled-text
 );
 
 // Dark Theme text
@@ -54,7 +56,8 @@ $light-disabled-text: rgba($light-primary-text, 0.5);
 $light-dividers: rgba($light-primary-text, 0.12);
 $light-focused: rgba($light-primary-text, 0.12);
 
-$mat-dark-theme-foreground: (base: $light-text,
+$mat-dark-theme-foreground: (
+  base: $light-text,
   divider: $light-dividers,
   dividers: $light-dividers,
   disabled: $light-disabled-text,
@@ -69,7 +72,7 @@ $mat-dark-theme-foreground: (base: $light-text,
   text: $light-text,
   slider-min: $light-text,
   slider-off: rgba($light-text, 0.3),
-  slider-off-active: rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3)
 );
 
 // Background config
@@ -84,7 +87,8 @@ $dark-bg-tooltip: lighten(#2c2c2c, 20%);
 $dark-bg-alpha-4: rgba(#2c2c2c, 0.04);
 $dark-bg-alpha-12: rgba(#2c2c2c, 0.12);
 
-$mat-light-theme-background: (background: $light-background,
+$mat-light-theme-background: (
+  background: $light-background,
   status-bar: $light-bg-darker-20,
   app-bar: $light-bg-darker-5,
   hover: $dark-bg-alpha-4,
@@ -98,7 +102,7 @@ $mat-light-theme-background: (background: $light-background,
   selected-disabled-button: $light-bg-darker-30,
   disabled-button-toggle: $light-bg-darker-10,
   unselected-chip: $light-bg-darker-10,
-  disabled-list-option: $light-bg-darker-10,
+  disabled-list-option: $light-bg-darker-10
 );
 
 // Dark bg
@@ -111,7 +115,8 @@ $light-bg-alpha-4: rgba(#fafafa, 0.04);
 $light-bg-alpha-12: rgba(#fafafa, 0.12);
 
 // Background palette for dark themes.
-$mat-dark-theme-background: (background: $dark-background,
+$mat-dark-theme-background: (
+  background: $dark-background,
   status-bar: $dark-bg-lighter-20,
   app-bar: $dark-bg-lighter-5,
   hover: $light-bg-alpha-4,
@@ -125,7 +130,7 @@ $mat-dark-theme-background: (background: $dark-background,
   selected-disabled-button: $dark-bg-lighter-30,
   disabled-button-toggle: $dark-bg-lighter-10,
   unselected-chip: $dark-bg-lighter-20,
-  disabled-list-option: $dark-bg-lighter-10,
+  disabled-list-option: $dark-bg-lighter-10
 );
 
 // Compute font config
@@ -134,65 +139,79 @@ $mat-dark-theme-background: (background: $dark-background,
 // Theme Config
 
 body {
-  --primary-color: #275b87;
-  --primary-lighter-color: #becedb;
-  --primary-darker-color: #17406a;
+  --primary-color: #2980b9;
+  --primary-lighter-color: #bfd9ea;
+  --primary-darker-color: #1963a2;
   --text-primary-color: #{$light-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
   --text-primary-darker-color: #{$light-primary-text};
 }
 
-$mat-primary: (main: #275b87,
-  lighter: #becedb,
-  darker: #17406a,
-  200: #275b87, // For slide toggle,
-  contrast : (main: $light-primary-text,
-    lighter: $dark-primary-text,
-    darker: $light-primary-text,
-  ));
+$mat-primary: (
+  main: #2980b9,
+  lighter: #bfd9ea,
+  darker: #1963a2,
+  200: #2980b9,
+  // For slide toggle,
+  contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text
+    )
+);
 $theme-primary: mat-palette($mat-primary, main, lighter, darker);
 
 body {
-  --accent-color: #4e8cc4;
-  --accent-lighter-color: #cadded;
-  --accent-darker-color: #356faf;
-  --text-accent-color: #{$light-primary-text};
+  --accent-color: #e3e3e3;
+  --accent-lighter-color: #f7f7f7;
+  --accent-darker-color: #d8d8d8;
+  --text-accent-color: #{$dark-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
-  --text-accent-darker-color: #{$light-primary-text};
+  --text-accent-darker-color: #{$dark-primary-text};
 }
 
-$mat-accent: (main: #4e8cc4,
-  lighter: #cadded,
-  darker: #356faf,
-  200: #4e8cc4, // For slide toggle,
-  contrast : (main: $light-primary-text,
-    lighter: $dark-primary-text,
-    darker: $light-primary-text,
-  ));
+$mat-accent: (
+  main: #e3e3e3,
+  lighter: #f7f7f7,
+  darker: #d8d8d8,
+  200: #e3e3e3,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text
+    )
+);
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
 
 body {
-  --warn-color: #fabd56;
-  --warn-lighter-color: #feebcc;
-  --warn-darker-color: #f8a63c;
+  --warn-color: #ff9725;
+  --warn-lighter-color: #ffe0be;
+  --warn-darker-color: #ff7a16;
   --text-warn-color: #{$dark-primary-text};
   --text-warn-lighter-color: #{$dark-primary-text};
   --text-warn-darker-color: #{$dark-primary-text};
 }
 
-$mat-warn: (main: #fabd56,
-  lighter: #feebcc,
-  darker: #f8a63c,
-  200: #fabd56, // For slide toggle,
-  contrast : (main: $dark-primary-text,
-    lighter: $dark-primary-text,
-    darker: $dark-primary-text,
-  ));
+$mat-warn: (
+  main: #ff9725,
+  lighter: #ffe0be,
+  darker: #ff7a16,
+  200: #ff9725,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text
+    )
+);
 $theme-warn: mat-palette($mat-warn, main, lighter, darker);
-;
 
-$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-$altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Theme Init
 @include angular-material-theme($theme);
@@ -208,19 +227,19 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 .mat-stroked-button,
 .mat-flat-button {
   padding: 0 1.15em;
-  margin: 0 .65em;
+  margin: 0 0.65em;
   min-width: 3em;
-  line-height: 36.4px
+  line-height: 36.4px;
 }
 
 .mat-standard-chip {
-  padding: .5em .85em;
+  padding: 0.5em 0.85em;
   min-height: 2.5em;
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';
   .mat-badge-content {
     font-family: 'Raleway';
   }
