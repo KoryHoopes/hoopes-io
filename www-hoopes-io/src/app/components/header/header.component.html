@@ -21,21 +21,18 @@
     </div>
   </div>
 </mat-toolbar>
-<!-- Navigation for the wide site -->
-<nav>
-  <mat-toolbar
-    fxLayout="row"
-    fxLayoutAlign="center center"
-    fxHide.xs="true"
-    color="accent"
-  >
-    <div class="site-wrapper" fxLayoutAlign="center center" fxFlex>
-      <a routerLink="home" routerLinkActive="active">Home</a>
-      <a routerLink="resume" routerLinkActive="active">Resume</a>
-    </div>
-  </mat-toolbar>
-</nav>
-<!-- Mobile menu for narrow site -->
+<!-- Navigation -->
+<mat-toolbar
+  class="navigation"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  fxHide.xs="true"
+>
+  <nav class="site-wrapper" fxLayout="row" fxLayoutAlign="center center" fxFlex>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+  </nav>
+</mat-toolbar>
+<!-- Mobile navigation -->
 <div
   class="mobile-menu"
   fxLayout="column"
@@ -56,9 +53,6 @@
     <nav fxLayout="column">
       <a routerLink="home" routerLinkActive="active" (click)="mobileMenu()">
         Home
-      </a>
-      <a routerLink="resume" routerLinkActive="active" (click)="mobileMenu()">
-        Resume
       </a>
     </nav>
   </div>
