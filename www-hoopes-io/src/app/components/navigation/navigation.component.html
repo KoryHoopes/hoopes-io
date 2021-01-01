@@ -1,10 +1,5 @@
 <!-- Masthead toolbar -->
-<mat-toolbar
-  class="masthead"
-  fxLayout="row"
-  fxLayoutAlign="center center"
-  color="primary"
->
+<mat-toolbar class="masthead" fxLayout="row" fxLayoutAlign="center center">
   <!-- The site wrapper keeps the masthead and navigation centered -->
   <div class="site-wrapper" fxFlex>
     <div class="logo" fxFlex>
@@ -49,7 +44,7 @@
   *ngIf="site.mobileMenu.show"
   [@toggleMobileMenu]
 >
-  <div class="row" fxLayout="row" fxLayoutAlign="center center">
+  <div class="row" fxLayout="row" fxLayoutAlign="space-evenly center">
     <button mat-icon-button *ngFor="let account of socialMedia">
       <a [href]="account.url">
         <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
