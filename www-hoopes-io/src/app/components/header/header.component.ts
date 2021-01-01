@@ -7,8 +7,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
-// Model
-import { SocialMedia } from '../../models/navigation/navigation.interface';
+// Models
+import { SocialMedia } from './models/social-media.interface';
 
 // Component data
 const site = {
