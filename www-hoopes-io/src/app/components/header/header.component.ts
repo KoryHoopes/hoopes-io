@@ -1,12 +1,6 @@
 // Angular
 import { Component } from '@angular/core';
-import {
-  trigger,
-  transition,
-  style,
-  animate,
-  state
-} from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 // Font Awesome
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
@@ -71,12 +65,12 @@ const animations = [
 ];
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
   animations: [animations]
 })
-export class NavigationComponent {
+export class HeaderComponent {
   constructor() {}
 
   site = site;
