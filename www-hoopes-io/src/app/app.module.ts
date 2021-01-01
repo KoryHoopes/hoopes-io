@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 // Components
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 // Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -18,6 +19,7 @@ import { RoutingModule } from './modules/routing.module';
   declarations: [
     // Components
     AppComponent,
+    FooterComponent,
     NavigationComponent
   ],
   imports: [

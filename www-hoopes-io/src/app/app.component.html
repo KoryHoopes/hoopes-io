@@ -1,8 +1,11 @@
 <div fxLayout="row">
   <app-navigation fxFlex></app-navigation>
 </div>
-<div class="content" fxLayout="row" fxLayoutAlign="center center">
+<div fxLayout="row" fxLayoutAlign="center center">
   <div class="site-wrapper" fxFlex>
-    <router-outlet></router-outlet>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
   </div>
 </div>
