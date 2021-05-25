@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // Components
 import { HomeComponent } from '../components/home/home.component';
-import { ResumeComponent } from '../components/resume/resume.component';
 
 const appRoutes: Routes = [
   {
@@ -14,10 +13,6 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'resume',
-    component: ResumeComponent
   }
 ];
 

@@ -58,11 +58,6 @@ const socialMedia = [
     name: 'LinkedIn',
     icon: icons.linkedIn,
     url: 'https://www.linkedin.com/in/kory-hoopes'
-  },
-  {
-    name: 'Twitter',
-    icon: icons.twitter,
-    url: 'https://www.twitter.com/koryhoopes'
   }
 ];
 

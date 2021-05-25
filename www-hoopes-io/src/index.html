@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>hoopes.io</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  </head>
-  <!-- Angular Material Typography -->
-  <body class="mat-typography">
-    <!-- Angular Application -->
-    <app-root></app-root>
-    <!-- Firebase SDK -->
-    <!-- Core -->
-    <script src="/__/firebase/8.2.1/firebase-app.js"></script>
-    <!-- Firebase Analytics-->
-    <script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>www.hoopes.io</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+</head>
+<!-- Angular Material Typography -->
+
+<body class="mat-typography">
+  <!-- Angular Application -->
+  <app-root></app-root>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyC_CZNyyGjcLfY_9TX2In-o8jBB52KlDN4",
+      authDomain: "hoopes-io-905b3.firebaseapp.com",
+      projectId: "hoopes-io-905b3",
+      storageBucket: "hoopes-io-905b3.appspot.com",
+      messagingSenderId: "105189457119",
+      appId: "1:105189457119:web:f096e7c1fbfc40b18dbd6a",
+      measurementId: "G-N7KVGMQ6XL"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+</body>
+
 </html>
