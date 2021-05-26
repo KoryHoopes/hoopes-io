@@ -2,10 +2,10 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 // Font Awesome
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 
 const animations = [
   trigger('toggleMobileMenu', [
@@ -37,11 +37,11 @@ const icons = {
   bars: faBars,
   gitHub: faGithub,
   linkedIn: faLinkedinIn,
-  times: faTimes,
-  twitter: faTwitter
+  times: faTimes
 };
 const site = {
   title: 'hoopes.io',
+  email: faEnvelope,
   baseUrl: '/',
   mobileMenu: {
     icon: faBars,

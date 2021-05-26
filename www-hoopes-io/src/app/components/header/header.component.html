@@ -1,13 +1,18 @@
 <!-- Header -->
-<div class="header" fxLayout="row">
+<header fxLayout="column">
 
   <!-- The site wrapper keeps the header and navigation centered -->
-  <div class="site-wrapper" fxLayout="column" fxFlex>
-    <div fxLayout="row"  fxLayoutAlign="center center">
-      <a class="logo" href="{{ site.baseUrl }}" fxFlex>{{ site.title }}</a>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div class="masthead site-wrapper" fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+
+      <!-- Logo -->
+      <a class="logo" href="{{ site.baseUrl }}">{{ site.title }}</a>
 
       <!-- Show the social media links when the site is wide -->
       <div fxHide.xs="true">
+        <button mat-icon-button>
+          <fa-icon class="fa-lg" [icon]="site.email" (click)="openEmail()"></fa-icon>
+        </button>
         <button mat-icon-button *ngFor="let account of socialMedia">
           <a [href]="account.url">
             <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
@@ -18,33 +23,31 @@
       <!-- Show the mobile menu button if the site is narrow -->
       <div fxHide fxShow.xs="true">
         <button mat-icon-button (click)="mobileMenu()">
-          <fa-icon class="fa-2x" [icon]="site.mobileMenu.icon"></fa-icon>
+          <a>
+            <fa-icon class="fa-2x" [icon]="site.mobileMenu.icon"></fa-icon>
+          </a>
         </button>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Navigation -->
-<div class="navigation" fxLayout="row" fxLayoutAlign="center center" fxHide.xs="true">
+  <!-- Navigation -->
+  <nav class="menu" fxLayout="row" fxLayoutAlign="center center" fxHide.xs="true">
+    <a routerLink="home" routerLinkActive="active">Home</a>
+  </nav>
 
-</div>
+  <!-- Mobile navigation -->
+  <nav class="mobile-menu" fxLayout="column" fxHide fxShow.xs="true" *ngIf="site.mobileMenu.show" [@toggleMobileMenu]>
+    <div class="social" fxLayout="row" fxLayoutAlign="space-evenly center">
+      <button mat-icon-button *ngFor="let account of socialMedia">
+        <a [href]="account.url">
+          <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
+        </a>
+      </button>
+    </div>
+    <div class="menu" fxLayout="column">
+      <a routerLink="home" routerLinkActive="active" (click)="mobileMenu()">Home</a>
+    </div>
+  </nav>
 
-<!-- Mobile navigation -->
-<div class="mobile-menu" fxLayout="column" fxHide fxShow.xs="true" *ngIf="site.mobileMenu.show" [@toggleMobileMenu]>
-  <div class="row" fxLayout="row" fxLayoutAlign="space-evenly center">
-    <button mat-icon-button *ngFor="let account of socialMedia">
-      <a [href]="account.url">
-        <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
-      </a>
-    </button>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="row" fxLayout="row">
-    <nav fxLayout="column">
-      <a routerLink="home" routerLinkActive="active" (click)="mobileMenu()">
-        Home
-      </a>
-    </nav>
-  </div>
-</div>
+</header>

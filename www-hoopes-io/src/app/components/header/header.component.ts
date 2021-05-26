@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 import { animations, icons, site, socialMedia } from './header.data';
 // Interfaces
 import { Site, SocialMedia } from './header.interfaces';
+// Material 
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -12,22 +14,40 @@ import { Site, SocialMedia } from './header.interfaces';
   animations: animations
 })
 export class HeaderComponent {
-  constructor() {}
+  constructor(public dialog: MatDialog) { }
 
-  mobileMenu = mobileMenu;
   site: Site = site;
   socialMedia: SocialMedia[] = socialMedia;
-}
 
-// Component functions
-function mobileMenu(): void {
-  site.mobileMenu.show = !site.mobileMenu.show;
+  // Component functions
+  mobileMenu(): void {
+    site.mobileMenu.show = !site.mobileMenu.show;
 
-  if (site.mobileMenu.icon === icons.bars) {
-    site.mobileMenu.icon = icons.times;
+    if (site.mobileMenu.icon === icons.bars) {
+      site.mobileMenu.icon = icons.times;
 
-    return;
+      return;
+    }
+    
+    site.mobileMenu.icon = icons.bars;
   }
 
-  site.mobileMenu.icon = icons.bars;
+  openEmail() {
+    this.dialog.open(EmailDialog);
+  }
 }
+
+@Component({
+  selector: 'email-dialog',
+  templateUrl: 'email-dialog.html',
+  styleUrls: ['./header.component.scss']
+})
+export class EmailDialog {
+  constructor(
+    public dialogRef: MatDialogRef<EmailDialog>) { }
+  
+  closeEmail(): void {
+    this.dialogRef.close();
+  }
+}
+

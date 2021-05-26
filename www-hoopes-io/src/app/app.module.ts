@@ -1,7 +1,6 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 // Angular Routing
 import { RoutingModule } from './modules/routing.module';
@@ -27,7 +26,6 @@ import { MaterialModule } from './modules/material.module';
     // Angular
     BrowserModule,
     BrowserAnimationsModule,
-    CommonModule,
     // Angular Routing
     RoutingModule,
     // Flex Layout

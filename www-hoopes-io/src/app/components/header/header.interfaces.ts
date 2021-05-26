@@ -1,5 +1,6 @@
 export interface Site {
   title: string;
+  email: any;
   baseUrl: string;
   mobileMenu: {
     icon: any;
