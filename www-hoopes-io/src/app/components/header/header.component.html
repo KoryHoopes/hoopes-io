@@ -38,12 +38,17 @@
 
   <!-- Mobile navigation -->
   <nav class="mobile-menu" fxLayout="column" fxHide fxShow.xs="true" *ngIf="site.mobileMenu.show" [@toggleMobileMenu]>
-    <div class="social" fxLayout="row" fxLayoutAlign="space-evenly center">
-      <button mat-icon-button *ngFor="let account of socialMedia">
-        <a [href]="account.url">
-          <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
-        </a>
+    <div class="social" fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-icon-button>
+        <fa-icon class="fa-lg" [icon]="site.email" (click)="openEmail()"></fa-icon>
       </button>
+      <ng-container *ngFor="let account of socialMedia">
+        <a [href]="account.url">
+          <button mat-icon-button>
+            <fa-icon class="fa-lg" [icon]="account.icon"></fa-icon>
+          </button>
+        </a>
+      </ng-container>
     </div>
     <div class="menu" fxLayout="column">
       <a routerLink="home" routerLinkActive="active" (click)="mobileMenu()">Home</a>
