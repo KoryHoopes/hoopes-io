@@ -2,7 +2,7 @@
 <header fxLayout="column">
 
   <!-- The site wrapper keeps the header and navigation centered -->
-  <div fxLayout="row" fxLayoutAlign="center center">
+  <div class="header-content" fxLayout="row" fxLayoutAlign="center center">
     <div class="masthead site-wrapper" fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
 
       <!-- Logo -->
@@ -23,9 +23,7 @@
       <!-- Show the mobile menu button if the site is narrow -->
       <div fxHide fxShow.xs="true">
         <button mat-icon-button (click)="mobileMenu()">
-          <a>
             <fa-icon class="fa-2x" [icon]="site.mobileMenu.icon"></fa-icon>
-          </a>
         </button>
       </div>
     </div>

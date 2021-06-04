@@ -1,17 +1,41 @@
 // Angular
 import { Component } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 // Data
-import { animations, icons, site, socialMedia } from './header.data';
+import { icons, site, socialMedia } from './header.data';
 // Interfaces
 import { Site, SocialMedia } from './header.interfaces';
 // Material 
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: animations
+  animations: [
+    trigger('toggleMobileMenu', [
+      transition(':enter', [
+        style({
+          top: '-22px'
+        }),
+        animate(
+          '.5s ease-in-out',
+          style({
+            top: '80px'
+          })
+        )
+      ]),
+      transition(':leave', [
+        style({}),
+        animate(
+          '.5s ease-in-out',
+          style({
+            top: '-22px'
+          })
+        )
+      ])
+    ])
+  ]
 })
 export class HeaderComponent {
   constructor(public dialog: MatDialog) { }
@@ -32,6 +56,7 @@ export class HeaderComponent {
     site.mobileMenu.icon = icons.bars;
   }
 
+  // Email modal
   openEmail() {
     this.dialog.open(EmailDialog);
   }
@@ -39,7 +64,7 @@ export class HeaderComponent {
 
 @Component({
   selector: 'email-dialog',
-  templateUrl: 'email-dialog.html',
+  templateUrl: './email-dialog.html',
   styleUrls: ['./header.component.scss']
 })
 export class EmailDialog {
